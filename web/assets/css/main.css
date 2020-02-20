@@ -10,9 +10,10 @@ body{
 }
 
 .context {
+    z-index: 5;
     width: 100%;
     position: absolute;
-    top:5%;
+    top:0%;
 
 }
 
@@ -70,6 +71,7 @@ body{
 /*AREA BACKGROUND ANIMATION*/
 
 .area{
+    z-index: -5;
     background: #4e54c8;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     width: 100%;
@@ -79,6 +81,7 @@ body{
 }
 
 .circles{
+    z-index: 0;
     position: absolute;
     top: 0;
     left: 0;

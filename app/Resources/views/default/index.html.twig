@@ -3,6 +3,14 @@
 {% block body %}
 
     <div class="context">
+
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}"></a>
+            <a class="carousel-item" href="#two!"><img src="{{  asset('assets/pictures/local/logos/keeplogo.png') }}"></a>
+            <a class="carousel-item" href="#three!"><img src="{{ asset('assets/pictures/local/logos/orpi.jpg') }}"></a>
+            <a class="carousel-item" href="#four!"><img src="{{ asset('assets/pictures/local/logos/CY-un-Nom-pour-un-Oui.jpg') }}"></a>
+        </div>
+
         <div class="row">
             <h1>Espace <span class="h1-span">Gambetta</span></h1>
         </div>
@@ -19,7 +27,7 @@
                             <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">
                         </li>
                         <li>
-{#                            <img src="{{ asset('assets/pictures/local/back/chevrons.png') }}" alt="center" class="icon">#}
+                            <img src="{{ asset('assets/pictures/local/back/chevrons.png') }}" alt="center" class="icon">
                         </li>
                         <li>
                             <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">
@@ -38,7 +46,19 @@
                 <div class="col l4">
                     <p>ici la gauche</p>
                 </div>
-                <div class="col l4"></div>
+                <div class="col l4">
+                    <ul class="icons">
+                        <li>
+                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">
+                        </li>
+                        <li>
+                            <img src="{{ asset('assets/pictures/local/back/chevrons.png') }}" alt="center" class="icon">
+                        </li>
+                        <li>
+                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">
+                        </li>
+                    </ul>
+                </div>
                 <div class="col l4">
                     <p>ici la droite</p>
                 </div>
@@ -53,6 +73,17 @@
                 </div>
                 <div class="col l4">
                     <p>ici le centre</p>
+                    <ul class="icons">
+                        <li>
+                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">
+                        </li>
+                        <li>
+                            <img src="{{ asset('assets/pictures/local/back/chevrons.png') }}" alt="center" class="icon">
+                        </li>
+                        <li>
+                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">
+                        </li>
+                    </ul>
                 </div>
                 <div class="col l4">
                     <p>ici la droite</p>
@@ -85,14 +116,11 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        $('.carousel.carousel-slider').carousel({
-            fullWidth: true
-        });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $('.parallax').parallax();
-        });
+        M.AutoInit( $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            duration: 200,
+        }));
+
     </script>
 
 {% endblock %}
