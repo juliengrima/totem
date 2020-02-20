@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+{#        cursive fonts#}
+        <link href="https://fonts.googleapis.com/css?family=Caveat|Damion|Dancing+Script|Pacifico&display=swap" rel="stylesheet">
+{#        other fonts#}
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nanum+Gothic+Coding|Quicksand|Roboto|Tajawal&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+            <!-- Compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        {% endblock %}
+    </body>
+</html>
