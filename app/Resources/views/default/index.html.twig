@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="context">
-
+{#Carousel Slider#}
         <div class="carousel carousel-slider">
             <a class="carousel-item" href="#one!"><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}"></a>
             <a class="carousel-item" href="#two!"><img src="{{  asset('assets/pictures/local/logos/keeplogo.png') }}"></a>
@@ -14,7 +14,7 @@
         <div class="row">
             <h1>Espace <span class="h1-span">Gambetta</span></h1>
         </div>
-
+{#levels#}
         <div class="row border-bottom">
             <h3>2ème étage</h3>
             <div>
@@ -86,7 +86,7 @@
         </div>
 
     </div>
-
+{#CSS Animation#}
     <div class="area" >
         <ul class="circles">
             <li></li>
@@ -112,12 +112,12 @@
     <script>
         $('.carousel.carousel-slider').carousel({
             fullWidth: true,
-            duration: 200,
+            duration: 3000,
         });
 
         setInterval(function () {
             $('.carousel.carousel-slider').carousel('next');
-        }, 2000)
+        }, 60000)
     </script>
 
 {% endblock %}
