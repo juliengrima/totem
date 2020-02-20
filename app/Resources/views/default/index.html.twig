@@ -116,10 +116,14 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        M.AutoInit( $('.carousel.carousel-slider').carousel({
+        $('.carousel.carousel-slider').carousel({
             fullWidth: true,
             duration: 200,
-        }));
+        });
+
+        setInterval(function () {
+            $('.carousel.carousel-slider').carousel('next');
+        }, 2000)
 
     </script>
 
