@@ -16,13 +16,12 @@ body{
     top:0%;
 
 }
-
     .context h1{
         text-align: center;
         color:   #abebc6 ;
         font-size: 100px;
-        /*text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;*/
         text-shadow: 1px 1px 2px red, 0 0 1em  #85c1e9 , 0 0 0.2em  #e5e7e9 ;
+        margin-bottom: 10%;
 
         /*IF YOU WANT CHANGE THE FONTS*/
         /*font-family: 'Roboto', sans-serif;*/
@@ -33,18 +32,26 @@ body{
 
 
     }
+    .h1-span{
+        font-size: 80px;
 
+        /*IF YOU WANT CHANGE THE FONTS*/
+        /*font-family: 'Dancing Script', cursive;*/
+        font-family: 'Pacifico', cursive;
+        /*font-family: 'Caveat', cursive;*/
+        /*font-family: 'Damion', cursive;*/
+    }
     .context h4,h3{
         color:  #eaeded;
         text-align: center;
         text-decoration: underline  #d4efdf;
-    }
 
+    }
     .context p{
         color: #FFFFFF;
         text-align: center;
+        font-size: 1.7em;
     }
-
     ul.icons{
         list-style: none;
         text-align: center;
@@ -58,15 +65,12 @@ body{
     height: 30% !important;
 }
 
-.h1-span{
-    font-size: 80px;
-
-    /*IF YOU WANT CHANGE THE FONTS*/
-    /*font-family: 'Dancing Script', cursive;*/
-    font-family: 'Pacifico', cursive;
-    /*font-family: 'Caveat', cursive;*/
-    /*font-family: 'Damion', cursive;*/
+.border-bottom{
+    border-bottom: 4px dashed #FFFFFF;
+    margin-bottom: 10%;
 }
+
+
 
 /*AREA BACKGROUND ANIMATION*/
 
