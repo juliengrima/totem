@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+        <h1>Modifier un étage</h1>
+
+        <div class="container center">
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form.levelName, {'attr': {'class': 'input-text-color'}} ) }}
+            <input type="submit" value="Enregistrer" class="submit" />
+            {{ form_end(edit_form) }}
+
+            <ul class="center">
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete" class="submit">
+                    {{ form_end(delete_form) }}
+                </li>
+                <li>
+                    <a href="{{ path('level_index') }}"><h5>retour à la liste</h5></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

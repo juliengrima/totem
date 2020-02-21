@@ -1,3 +1,11 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+#-------------------------------------------------------
+#------------------------- CRUD
+#-------------------------------------------------------
+
+app_level:
+    resource: "@AppBundle/Resources/config/routing/level.yml"
+    prefix:   /level

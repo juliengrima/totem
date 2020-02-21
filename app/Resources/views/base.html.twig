@@ -15,11 +15,24 @@
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     </head>
     <body>
+        {% block header %}{% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
             <!-- Compiled and minified JavaScript -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+            <script>
+                $('.carousel.carousel-slider').carousel({
+                    fullWidth: true,
+                    duration: 2000,
+                });
+
+                setInterval(function () {
+                    $('.carousel.carousel-slider').carousel('next');
+                }, 60000)
+            </script>
         {% endblock %}
     </body>
 </html>

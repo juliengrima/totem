@@ -1,0 +1,19 @@
+level_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Level:index" }
+    methods:  GET
+
+level_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Level:new" }
+    methods:  [GET, POST]
+
+level_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Level:edit" }
+    methods:  [GET, POST]
+
+level_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Level:delete" }
+    methods:  DELETE

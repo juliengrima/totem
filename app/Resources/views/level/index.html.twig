@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+        <h1>Liste des niveaux</h1>
+
+        <div class="container">
+
+            <ul class="center">
+                <li>
+                    <a href="{{ path('level_new') }}"><h3>Ajouter un nouvel étage</h3></a>
+                </li>
+            </ul>
+
+            <table class="table-text-color">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom de l'étage</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for level in levels %}
+                    <tr>
+                        <td>{{ level.id }}</td>
+                        <td>{{ level.levelName }}</td>
+                        <td class="">
+                            <ul>
+                                <li>
+                                    <a href="{{ path('level_edit', { 'id': level.id }) }}">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

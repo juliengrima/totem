@@ -14,4 +14,10 @@ AppBundle\Entity\Level:
             length: '10'
             unique: true
             column: level_name
+
+    oneToMany:
+        society:
+            targetEntity: AppBundle\Entity\Society
+            mappedBy: levels
+
     lifecycleCallbacks: {  }

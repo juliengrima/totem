@@ -7,8 +7,9 @@ namespace AppBundle\Entity;
  */
 class Society
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,21 @@ class Society
      */
     private $societyName;
 
+    /**
+     * @var \AppBundle\Entity\Level
+     */
+    private $levels;
+
+    /**
+     * @var \AppBundle\Entity\Side
+     */
+    private $side;
+
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -51,5 +62,52 @@ class Society
     {
         return $this->societyName;
     }
-}
 
+    /**
+     * Set levels
+     *
+     * @param \AppBundle\Entity\Level $levels
+     *
+     * @return Society
+     */
+    public function setLevels(\AppBundle\Entity\Level $levels = null)
+    {
+        $this->levels = $levels;
+
+        return $this;
+    }
+
+    /**
+     * Get levels
+     *
+     * @return \AppBundle\Entity\Level
+     */
+    public function getLevels()
+    {
+        return $this->levels;
+    }
+
+    /**
+     * Set side
+     *
+     * @param \AppBundle\Entity\Side $side
+     *
+     * @return Society
+     */
+    public function setSide(\AppBundle\Entity\Side $side = null)
+    {
+        $this->side = $side;
+
+        return $this;
+    }
+
+    /**
+     * Get side
+     *
+     * @return \AppBundle\Entity\Side
+     */
+    public function getSide()
+    {
+        return $this->side;
+    }
+}

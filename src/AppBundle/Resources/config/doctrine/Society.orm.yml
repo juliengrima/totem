@@ -13,4 +13,19 @@ AppBundle\Entity\Society:
             type: string
             length: '30'
             column: society_name
+
+    manyToOne:
+        levels:
+            targetEntity: AppBundle\Entity\Level
+            inversedBy: society
+            joinColumn:
+                name: level_id
+                referencedColumnName: id
+        side:
+            targetEntity: AppBundle\Entity\Side
+            inversedBy: society
+            joinColumn:
+                name: side_id
+                referencedColumnName: id
+
     lifecycleCallbacks: {  }
