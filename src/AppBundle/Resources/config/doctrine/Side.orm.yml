@@ -1,0 +1,17 @@
+AppBundle\Entity\Side:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\SideRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        sideName:
+            type: string
+            length: '10'
+            unique: true
+            column: side_name
+    lifecycleCallbacks: {  }

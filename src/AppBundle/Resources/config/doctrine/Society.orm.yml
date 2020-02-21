@@ -1,0 +1,16 @@
+AppBundle\Entity\Society:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\SocietyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        societyName:
+            type: string
+            length: '30'
+            column: society_name
+    lifecycleCallbacks: {  }
