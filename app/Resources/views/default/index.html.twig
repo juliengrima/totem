@@ -2,36 +2,10 @@
 
 {% block body %}
 {#levels#}
-        <div class="row border-bottom">
-            <h3>2ème étage</h3>
-            <div>
-                <div class="col l4">
-                    <ul class="icons">
-                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                        <li class="vertic-al">ici la gauche</li>
-                    </ul>
-                </div>
-                <div class="col l4">
-                    <ul class="icons">
-                        <li>
-                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">
-                        </li>
-                        <li>
-                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">
-                        </li>
-                    </ul>
-                </div>
-                <div class="col l4">
-                    <ul class="icons">
-                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                        <li class="vertic-al">ici la droite</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
+    {% for level in levels %}
         <div class="row border-bottom">
-            <h3>1er étage</h3>
+            <h3>{{ level.levelName }}</h3>
             <div>
                 <div class="col l4">
                     <ul class="icons">
@@ -57,41 +31,97 @@
                 </div>
             </div>
         </div>
+    {% endfor %}
+{#        <div class="row border-bottom">#}
+{#            <h3>2ème étage</h3>#}
+{#            <div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici la gauche</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici la droite</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
-        <div class="row border-bottom">
-            <h3>Rez de chaussée</h3>
-            <div>
-                <div class="col l4">
-                    <ul class="icons">
-                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                        <li class="vertic-al">ici la gauche</li>
-                    </ul>
-                </div>
-                <div class="col l4">
-                    <ul class="icons">
-                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                        <li class="vertic-al">ici le centre</li>
-                    </ul>
-                    <ul class="icons">
-                        <li>
-                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">
-                        </li>
-                        <li>
-                            <img src="{{ asset('assets/pictures/local/back/chevrons.png') }}" alt="center" class="icon">
-                        </li>
-                        <li>
-                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">
-                        </li>
-                    </ul>
-                </div>
-                <div class="col l4">
-                    <ul class="icons">
-                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                        <li class="vertic-al">ici la droite</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+{#        <div class="row border-bottom">#}
+{#            <h3>1er étage</h3>#}
+{#            <div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici la gauche</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici la droite</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+{#        <div class="row border-bottom">#}
+{#            <h3>Rez de chaussée</h3>#}
+{#            <div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici la gauche</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici le centre</li>#}
+{#                    </ul>#}
+{#                    <ul class="icons">#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/previous.png') }}" alt="center" class="icon">#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/chevrons.png') }}" alt="center" class="icon">#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <img src="{{ asset('assets/pictures/local/back/next.png') }}" alt="right" class="icon">#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="col l4">#}
+{#                    <ul class="icons">#}
+{#                        <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>#}
+{#                        <li class="vertic-al">ici la droite</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
     </div>
 

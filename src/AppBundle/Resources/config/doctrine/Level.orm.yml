@@ -11,7 +11,7 @@ AppBundle\Entity\Level:
     fields:
         levelName:
             type: string
-            length: '10'
+            length: '30'
             unique: true
             column: level_name
 
