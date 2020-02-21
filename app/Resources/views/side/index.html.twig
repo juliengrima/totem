@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sides list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sidename</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for side in sides %}
+            <tr>
+                <td><a href="{{ path('side_show', { 'id': side.id }) }}">{{ side.id }}</a></td>
+                <td>{{ side.sideName }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('side_show', { 'id': side.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('side_edit', { 'id': side.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('side_new') }}">Create a new side</a>
+        </li>
+    </ul>
+{% endblock %}

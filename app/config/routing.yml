@@ -9,3 +9,7 @@ app:
 app_level:
     resource: "@AppBundle/Resources/config/routing/level.yml"
     prefix:   /level
+    
+app_side:
+    resource: "@AppBundle/Resources/config/routing/side.yml"
+    prefix:   /side

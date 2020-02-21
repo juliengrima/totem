@@ -20,7 +20,7 @@ class LevelController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $levels = $em->getRepository('AppBundle:Level')->findAll();
+        $levels = $em->getRepository('AppBundle:Level')->getlevels();
 
         return $this->render('level/index.html.twig', array(
             'levels' => $levels,

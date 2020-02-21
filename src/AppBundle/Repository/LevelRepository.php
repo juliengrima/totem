@@ -10,4 +10,12 @@ namespace AppBundle\Repository;
  */
 class LevelRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getlevels(){
+//        Alias 'l' = Level
+
+        $qb = $this->createQueryBuilder('l')
+            ->select('l.id', 'l.levelName')
+            ->orderBy('l.id', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
 }

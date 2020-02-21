@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $level = $em->getRepository('AppBundle:Level')->findAll(array('id' =>'ASC'));
+        $level = $em->getRepository('AppBundle:Level')->getlevels();
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
