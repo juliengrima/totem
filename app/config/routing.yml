@@ -13,3 +13,7 @@ app_level:
 app_side:
     resource: "@AppBundle/Resources/config/routing/side.yml"
     prefix:   /side
+    
+app_society:
+    resource: "@AppBundle/Resources/config/routing/society.yml"
+    prefix:   /society

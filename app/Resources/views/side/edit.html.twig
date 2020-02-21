@@ -1,21 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Side edit</h1>
+        <h1>Modifier une direction</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        <div class="container center">
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form.sideName, {'attr': {'class': 'input-text-color'}} ) }}
+            <input type="submit" value="Enregistrer" class="submit" />
+            {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('side_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <ul class="center">
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete" class="submit">
+                    {{ form_end(delete_form) }}
+                </li>
+                <li>
+                    <a href="{{ path('side_index') }}"><h5>retour à la liste</h5></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}

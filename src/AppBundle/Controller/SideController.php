@@ -42,26 +42,12 @@ class SideController extends Controller
             $em->persist($side);
             $em->flush();
 
-            return $this->redirectToRoute('side_show', array('id' => $side->getId()));
+            return $this->redirectToRoute('side_index', array('id' => $side->getId()));
         }
 
         return $this->render('side/new.html.twig', array(
             'side' => $side,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a side entity.
-     *
-     */
-    public function showAction(Side $side)
-    {
-        $deleteForm = $this->createDeleteForm($side);
-
-        return $this->render('side/show.html.twig', array(
-            'side' => $side,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -78,7 +64,7 @@ class SideController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('side_edit', array('id' => $side->getId()));
+            return $this->redirectToRoute('side_index', array('id' => $side->getId()));
         }
 
         return $this->render('side/edit.html.twig', array(

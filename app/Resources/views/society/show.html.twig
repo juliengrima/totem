@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Side</h1>
+    <h1>Society</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ side.id }}</td>
+                <td>{{ society.id }}</td>
             </tr>
             <tr>
-                <th>Sidename</th>
-                <td>{{ side.sideName }}</td>
+                <th>Societyname</th>
+                <td>{{ society.societyName }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('side_index') }}">Back to the list</a>
+            <a href="{{ path('society_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('side_edit', { 'id': side.id }) }}">Edit</a>
+            <a href="{{ path('society_edit', { 'id': society.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

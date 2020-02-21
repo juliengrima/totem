@@ -1,39 +1,41 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Sides list</h1>
+        <h1>Liste des directions</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Sidename</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for side in sides %}
-            <tr>
-                <td><a href="{{ path('side_show', { 'id': side.id }) }}">{{ side.id }}</a></td>
-                <td>{{ side.sideName }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('side_show', { 'id': side.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('side_edit', { 'id': side.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="container">
 
-    <ul>
-        <li>
-            <a href="{{ path('side_new') }}">Create a new side</a>
-        </li>
-    </ul>
+            <ul class="center">
+                <li>
+                    <a href="{{ path('side_new') }}"><h3>Ajouter une direction</h3></a>
+                </li>
+            </ul>
+
+            <table class="table-text-color">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Direction</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for side in sides %}
+                    <tr>
+                        <td>{{ side.id }}</td>
+                        <td>{{ side.sideName }}</td>
+                        <td class="">
+                            <ul>
+                                <li>
+                                    <a href="{{ path('side_edit', { 'id': side.id }) }}">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 {% endblock %}

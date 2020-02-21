@@ -15,10 +15,14 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $level = $em->getRepository('AppBundle:Level')->getlevels();
+        $side = $em->getRepository('AppBundle:Side')->findAll();
+        $society = $em->getRepository('AppBundle:Society')->findBy(array('id' => $level));
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'levels' => $level,
+            'sides' => $side,
+            'societies' => $society
         ));
     }
 }

@@ -1,16 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Side creation</h1>
+        <h1>Ajout d'une direction</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <div class="container center">
+            {{ form_start(form) }}
+            {{ form_widget(form.sideName, {'attr': {'class': 'input-text-color'}} ) }}
+            <input type="submit" value="Enregistrer" class="submit" />
+            {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('side_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <ul class="center">
+                <li>
+                    <a href="{{ path('side_index') }}"><h5>retour à la liste</h5></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}
