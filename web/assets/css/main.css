@@ -251,3 +251,7 @@ td{
     font-size: 1.2em;
 }
 
+.select-wrapper input.select-dropdown{
+    color: #eaeded;
+}
+

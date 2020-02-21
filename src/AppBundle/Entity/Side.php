@@ -7,6 +7,11 @@ namespace AppBundle\Entity;
  */
 class Side
 {
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->sideName . $this->sideName;
+    }
 
     /**
      * @var integer

@@ -21,9 +21,13 @@ class SocietyController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $societies = $em->getRepository('AppBundle:Society')->findAll();
+        $sides = $em->getRepository('AppBundle:Side')->findBy(array('id' => $societies));
+        $levels = $em->getRepository('AppBundle:Level')->findBy(array('id' => $societies));
 
         return $this->render('society/index.html.twig', array(
             'societies' => $societies,
+            'sides' => $sides,
+            'levels' => $levels
         ));
     }
 
@@ -42,26 +46,12 @@ class SocietyController extends Controller
             $em->persist($society);
             $em->flush();
 
-            return $this->redirectToRoute('society_show', array('id' => $society->getId()));
+            return $this->redirectToRoute('society_index', array('id' => $society->getId()));
         }
 
         return $this->render('society/new.html.twig', array(
             'society' => $society,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a society entity.
-     *
-     */
-    public function showAction(Society $society)
-    {
-        $deleteForm = $this->createDeleteForm($society);
-
-        return $this->render('society/show.html.twig', array(
-            'society' => $society,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -78,7 +68,7 @@ class SocietyController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('society_edit', array('id' => $society->getId()));
+            return $this->redirectToRoute('society_index', array('id' => $society->getId()));
         }
 
         return $this->render('society/edit.html.twig', array(

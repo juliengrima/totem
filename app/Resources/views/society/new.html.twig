@@ -1,16 +1,30 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Society creation</h1>
+        <h1>Ajout d'une société</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <div class="container center">
+            {{ form_start(form) }}
+            {{ form_widget(form.societyName, {'attr': {'class': 'input-text-color'}} ) }}
+            {{ form_widget(form.levels, {'attr': {'type' : 'list', 'class': 'input-text-color'}} ) }}
+            {{ form_widget(form.side, {'attr': {'class': 'input-text-color'}} ) }}
+            <input type="submit" value="Enregistrer" class="submit" />
+            {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('society_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <ul class="center">
+                <li>
+                    <a href="{{ path('level_index') }}"><h5>retour à la liste</h5></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    </script>
 {% endblock %}

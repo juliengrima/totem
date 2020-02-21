@@ -1,39 +1,45 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Societies list</h1>
+        <h1>Liste des sociétés</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Societyname</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for society in societies %}
-            <tr>
-                <td><a href="{{ path('society_show', { 'id': society.id }) }}">{{ society.id }}</a></td>
-                <td>{{ society.societyName }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('society_show', { 'id': society.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('society_edit', { 'id': society.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="container">
 
-    <ul>
-        <li>
-            <a href="{{ path('society_new') }}">Create a new society</a>
-        </li>
-    </ul>
+            <ul class="center">
+                <li>
+                    <a href="{{ path('society_new') }}"><h3>Ajouter une nouvelle société</h3></a>
+                </li>
+            </ul>
+
+            <table class="table-text-color">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom de la société</th>
+                    <th>Etage</th>
+                    <th>Direction</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for society in societies %}
+                    <tr>
+                        <td>{{ society.id }}</td>
+                        <td>{{ society.societyName }}</td>
+                        <td>{{ society.levels }}</td>
+                        <td>{{ society.side }}</td>
+                        <td class="">
+                            <ul>
+                                <li>
+                                    <a href="{{ path('level_edit', { 'id': society.id }) }}">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 {% endblock %}

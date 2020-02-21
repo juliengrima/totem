@@ -13,7 +13,9 @@ class SocietyType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('societyName')->add('levels')->add('side');
+        $builder->add('societyName')
+                ->add('levels')
+                ->add('side');
     }/**
      * {@inheritdoc}
      */

@@ -7,6 +7,11 @@ namespace AppBundle\Entity;
  */
 class Level
 {
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->levelName . $this->levelName;
+    }
 
     /**
      * @var integer
