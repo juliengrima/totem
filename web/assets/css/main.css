@@ -72,6 +72,12 @@ img{
         vertical-align: middle;
         margin-top: 15%;
     }
+    ul.list{
+        list-style: none;
+        text-align: center;
+        /*vertical-align: middle;*/
+        margin-top: 15%;
+    }
         ul.icons li{
             display: inline;
             color: #FFFFFF;
@@ -87,7 +93,13 @@ img{
     margin-top: -50%;
 }
 
+.li-underline{
+    border-width:5px;
+    border-bottom-style:dashed;
+    border-color: #FFFFFF;
+}
 
+/*------------------------ ANIMATION -----------------------------*/
 
 /*AREA BACKGROUND ANIMATION*/
 
