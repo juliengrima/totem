@@ -21,8 +21,8 @@ img{
     height: 100%;
 }
     .logo{
-        width: 20% !important;
-        height: 20% !important;
+        width: 12% !important;
+        height: 12% !important;
     }
 
 .context {
@@ -37,7 +37,7 @@ img{
         color:   #abebc6 ;
         font-size: 150px;
         text-shadow: 1px 1px 2px red, 0 0 1em  #85c1e9 , 0 0 0.2em  #e5e7e9 ;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
 
         /*IF YOU WANT CHANGE THE FONTS*/
         /*font-family: 'Roboto', sans-serif;*/
@@ -70,23 +70,21 @@ img{
         list-style: none;
         text-align: center;
         vertical-align: middle;
-        margin-top: 15%;
-    }
-    ul.list{
-        list-style: none;
-        text-align: center;
-        /*vertical-align: middle;*/
-        margin-top: 15%;
+        margin-top: 30%;
+        margin-bottom: 5%;
     }
         ul.icons li{
             display: inline;
             color: #FFFFFF;
             font-size: 1.7em;
+            margin-bottom: 15%;
         }
 
 .icon{
-    width: 30%!important;
-    height: 30% !important;
+    width: 25%!important;
+    height: 25% !important;
+    vertical-align: middle;
+    margin-bottom: inherit;
 }
 
 .vertic-al{
@@ -238,6 +236,11 @@ tr{
     border-bottom-style:dashed;
     border-color: #FFFFFF;
 }
+    tr.tr-index{
+        border-width: none;
+        border-bottom-style: none;
+    }
+
 th{
     font-size: 1.5em;
     text-align: center;
@@ -248,6 +251,12 @@ td{
     text-align: center;
     text-decoration: none!important;
 }
+    td.td-index{
+        font-size: 1.7em;
+        text-align: left;
+        text-decoration: none!important;
+        padding-left: 15%;
+    }
 
 .table-text-color{
     color: #FFFFFF;

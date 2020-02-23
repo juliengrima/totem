@@ -8,14 +8,18 @@
             <h3>{{ level.levelName }}</h3>
             <div>
                 <div class="col l4">
-                    <ul class="list">
+                    <table class="table-text-color">
                         {% for society in societies %}
                             {% if (society.side.sideName == 'gauche') and (society.levels.levelName == level.levelName) %}
-                                <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                                <li class="vertic-al">{{ society.societyName }}</li>
+                                <tr class="tr-index">
+                                <td class="td-index">
+                                    <img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo">
+                                    {{ society.societyName }}
+                                </td>
+                                </tr>
                             {% endif %}
                         {% endfor %}
-                    </ul>
+                    </table>
                 </div>
                 <div class="col l4">
                     <ul class="icons li-underline">
@@ -28,14 +32,18 @@
                     </ul>
                 </div>
                 <div class="col l4">
-                    <ul class="list">
+                    <table class="table-text-color">
                         {% for society in societies %}
                             {% if (society.side.sideName == 'droite') and (society.levels.levelName == level.levelName) %}
-                                <li><img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo"></li>
-                                <li class="vertic-al">{{ society.societyName }}</li>
+                            <tr class="tr-index">
+                                <td class="td-index">
+                                    <img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo">
+                                    {{ society.societyName }}
+                                </td>
+                            </tr>
                             {% endif %}
                         {% endfor %}
-                    </ul>
+                    </table>
                 </div>
             </div>
         </div>
