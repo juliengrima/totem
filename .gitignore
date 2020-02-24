@@ -1,7 +1,4 @@
-/.web-server-pid
-/app/config/parameters.yml
-/build/
-/phpunit.xml
+### Symfony cache
 /var/*
 !/var/cache
 /var/cache/*
@@ -13,7 +10,19 @@
 /var/sessions/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
-/vendor/
+
+### Symfony web
 /web/bundles/
-.idea
+/web/assets/pictures/downloads/*
+
+#### Fichiers temporaires
+*~
+
+#### Sass Files
+.sass-cache/
+
+#### Mac Files
 .DS_Store
+
+#### Php Storm Files
+.idea
