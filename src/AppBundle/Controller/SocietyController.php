@@ -46,15 +46,18 @@ class SocietyController extends Controller
             /* KEEP PICTURE */
             $imageForm = $form->get ('media');
             $image = $imageForm->getData ();
-            $image->setMediaName ($image);
+            if (isset($image)){
 
-            if (isset($image)) {
+                $image->setMediaName ($image);
 
-                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
-                $image->setMediaName (preg_replace ('/\W/', '_', "picture_" . uniqid ()));
+                if (isset($image)) {
 
-                // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
-                $this->get ('media.interface')->mediaUpload ($image);
+                    /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                    $image->setMediaName (preg_replace ('/\W/', '_', "picture_" . uniqid ()));
+
+                    // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                    $this->get ('media.interface')->mediaUpload ($image);
+                }
             }
 
             $em = $this->getDoctrine()->getManager();
