@@ -1,3 +1,13 @@
+###################
+### Git Ignore ####
+###################
+
+####  Symfony 3
+/app/config/parameters.yml
+/build/
+/phpunit.xml
+/vendor/
+
 ### Symfony cache
 /var/*
 !/var/cache
@@ -13,7 +23,10 @@
 
 ### Symfony web
 /web/bundles/
-/web/assets/pictures/downloads/*
+/web/images/downloads/
+/web/media/cache/
+/web/assets/videos/
+/web/assets/documents/
 
 #### Fichiers temporaires
 *~
