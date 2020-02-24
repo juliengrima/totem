@@ -13,7 +13,7 @@
                             {% if (society.side.sideName == 'gauche') and (society.levels.levelName == level.levelName) %}
                                 <tr class="tr-index">
                                 <td class="td-index">
-                                    <img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo">
+                                    <img src="{{ asset( society.media.link) }}" alt="{{ asset( society.media.mediaName) }}" class="logo">
                                     {{ society.societyName }}
                                 </td>
                                 </tr>
@@ -37,7 +37,7 @@
                             {% if (society.side.sideName == 'droite') and (society.levels.levelName == level.levelName) %}
                             <tr class="tr-index">
                                 <td class="td-index">
-                                    <img src="{{ asset('assets/pictures/local/logos/technosante.png') }}" alt="" class="logo">
+                                    <img src="{{ asset( society.media.link) }}" alt="{{ asset( society.media.mediaName) }}" class="logo">
                                     {{ society.societyName }}
                                 </td>
                             </tr>

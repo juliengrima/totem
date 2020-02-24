@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class MediaType extends AbstractType
 {
@@ -13,7 +14,11 @@ class MediaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('link')->add('mediaName');
+        $builder->add('file', FileType::class, array(
+            'label' => false,
+            'data_class' => null
+        ))
+        ;
     }/**
      * {@inheritdoc}
      */

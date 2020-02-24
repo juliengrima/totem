@@ -28,6 +28,11 @@ class Society
      */
     private $side;
 
+    /**
+     * @var \AppBundle\Entity\Media
+     */
+    private $media;
+
 
     /**
      * Get id
@@ -110,11 +115,6 @@ class Society
     {
         return $this->side;
     }
-    /**
-     * @var \AppBundle\Entity\Media
-     */
-    private $media;
-
 
     /**
      * Set media

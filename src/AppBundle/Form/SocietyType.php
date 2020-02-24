@@ -16,7 +16,7 @@ class SocietyType extends AbstractType
         $builder->add('societyName')
                 ->add('levels')
                 ->add('side')
-                ->add('media', Media::class, array(
+                ->add('media', MediaType::class, array(
                         'label' => false,
                         'required' => false,
                     )

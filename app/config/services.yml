@@ -28,6 +28,11 @@ services:
         resource: '../../src/AppBundle/Controller'
         public: true
         tags: ['controller.service_arguments']
+    
+    # Upload Service
+    media.interface:
+        class: AppBundle\Services\mediaInterface
+        arguments: ['@service_container']
 
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:

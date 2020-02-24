@@ -46,12 +46,12 @@ class SocietyController extends Controller
             /* KEEP PICTURE */
             $imageForm = $form->get ('media');
             $image = $imageForm->getData ();
-            $image->setMedia ($image);
+            $image->setMediaName ($image);
 
             if (isset($image)) {
 
                 /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
-                $image->setName (preg_replace ('/\W/', '_', "movie_" . uniqid ()));
+                $image->setMediaName (preg_replace ('/\W/', '_', "picture_" . uniqid ()));
 
                 // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
                 $this->get ('media.interface')->mediaUpload ($image);

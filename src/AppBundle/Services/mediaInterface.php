@@ -35,6 +35,6 @@ class mediaInterface extends Controller
 		$extension = $file->guessExtension();
 
 		$file->move($this->container->getParameter('medias_directory'), $media->getMediaName().'.'.$extension);
-		$media->setLink('assets/videos/'.$media->getMediaName().'.'.$extension);
+		$media->setLink('assets/pictures/download/'.$media->getMediaName().'.'.$extension);
 	}
 }
