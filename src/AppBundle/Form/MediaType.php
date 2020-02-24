@@ -6,28 +6,21 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SocietyType extends AbstractType
+class MediaType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('societyName')
-                ->add('levels')
-                ->add('side')
-                ->add('media', Media::class, array(
-                        'label' => false,
-                        'required' => false,
-                    )
-                );
+        $builder->add('link')->add('mediaName');
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Society'
+            'data_class' => 'AppBundle\Entity\Media'
         ));
     }
 
@@ -36,7 +29,7 @@ class SocietyType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_society';
+        return 'appbundle_media';
     }
 
 

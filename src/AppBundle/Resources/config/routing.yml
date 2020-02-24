@@ -1,3 +1,7 @@
+app_media:
+    resource: "@AppBundle/Resources/config/routing/media.yml"
+    prefix:   /media
+
 
 
 

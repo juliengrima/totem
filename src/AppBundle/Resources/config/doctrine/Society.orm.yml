@@ -27,5 +27,9 @@ AppBundle\Entity\Society:
             joinColumn:
                 name: side_id
                 referencedColumnName: id
+    oneToOne:
+        media:
+            targetEntity: AppBundle\Entity\Media
+            cascade: ['all']
 
     lifecycleCallbacks: {  }

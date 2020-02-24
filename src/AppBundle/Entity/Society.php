@@ -110,4 +110,33 @@ class Society
     {
         return $this->side;
     }
+    /**
+     * @var \AppBundle\Entity\Media
+     */
+    private $media;
+
+
+    /**
+     * Set media
+     *
+     * @param \AppBundle\Entity\Media $media
+     *
+     * @return Society
+     */
+    public function setMedia(\AppBundle\Entity\Media $media = null)
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
+    /**
+     * Get media
+     *
+     * @return \AppBundle\Entity\Media
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
 }
