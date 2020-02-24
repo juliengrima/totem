@@ -16,7 +16,6 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $level = $em->getRepository('AppBundle:Level')->getlevels();
         $side = $em->getRepository('AppBundle:Side')->findAll();
-//        $society = $em->getRepository('AppBundle:Society')->findBy(array('id' => $level));
         $society = $em->getRepository('AppBundle:Society')->findAll();
         $societyDirection = $em->getRepository('AppBundle:Society')->findBy(array('id' => $side));
 
