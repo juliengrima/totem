@@ -268,7 +268,11 @@ td{
 
 .input-text-color{
     color: #FFFFFF;
+    font-size: 1.5em;
 }
+    .label-twig{
+        font-size: 1.5em;
+    }
 
 .submit{
     font-size: 1.2em;

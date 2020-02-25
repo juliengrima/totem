@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+        <h1>Ajout d'un étage</h1>
+
+        <div class="container center">
+            {{ form_start(form) }}
+            <div>
+                <h4>Titre</h4>
+                {{ form_widget(form.title, {'attr': {'class': 'input-text-color'}} ) }}
+            </div>
+            <div>
+                <h4>Texte</h4>
+                {{ form_widget(form.text, {'attr': {'class': 'input-text-color textarea1'}} ) }}
+            </div>
+            <div>
+                <h4>Image</h4>
+                {{ form_widget(form.media, { 'attr': {'class': 'media-input'}} ) }}
+            </div>
+
+            <input type="submit" value="Enregistrer" class="submit" />
+            {{ form_end(form) }}
+
+            <ul class="center">
+                <li>
+                    <a href="{{ path('level_index') }}"><h5>retour à la liste</h5></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $('.textarea1').val('New Text');
+        M.textareaAutoResize($('.textarea1'));
+    </script>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    <h1>Liste des présentations</h1>
+
+    <div class="container">
+
+        <ul class="center">
+            <li>
+                <a href="{{ path('carousel_new') }}"><h3>Ajouter un élément de présentation</h3></a>
+            </li>
+        </ul>
+
+        <table class="table-text-color">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for carousel in carousels %}
+                <tr>
+                    <td>{{ carousel.id }}</td>
+                    <td>{{ carousel.title }}</td>
+                    <td>{{ carousel.text }}</td>
+                    <td class="">
+                        <ul>
+                            <li>
+                                <a href="{{ path('carousel_edit', { 'id': carousel.id }) }}">Modifier</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Carousels list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carousel in carousels %}
+            <tr>
+                <td><a href="{{ path('carousel_show', { 'id': carousel.id }) }}">{{ carousel.id }}</a></td>
+                <td>{{ carousel.title }}</td>
+                <td>{{ carousel.text }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('carousel_show', { 'id': carousel.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('carousel_edit', { 'id': carousel.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('carousel_new') }}">Create a new carousel</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -17,3 +17,7 @@ app_side:
 app_society:
     resource: "@AppBundle/Resources/config/routing/society.yml"
     prefix:   /society
+
+app_carousel:
+    resource: "@AppBundle/Resources/config/routing/carousel.yml"
+    prefix:   /carousel

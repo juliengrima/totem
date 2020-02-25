@@ -84,6 +84,24 @@ class SocietyController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+                /* KEEP PICTURE */
+                $imageForm = $editForm->get ('media');
+                $image = $imageForm->getData ();
+                if (isset($image)){
+
+                    $image->setMediaName ($image);
+
+                    if (isset($image)) {
+
+                        /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                        $image->setMediaName (preg_replace ('/\W/', '_', "picture_" . uniqid ()));
+
+                        // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                        $this->get ('media.interface')->mediaUpload ($image);
+                    }
+                }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('society_index', array('id' => $society->getId()));
