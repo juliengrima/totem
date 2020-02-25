@@ -1,0 +1,23 @@
+AppBundle\Entity\Carousel:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CarouselRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '50'
+        text:
+            type: text
+            nullable: true
+
+    oneToOne:
+        media:
+            targetEntity: AppBundle\Entity\Media
+            cascade: ['all']
+    lifecycleCallbacks: {  }

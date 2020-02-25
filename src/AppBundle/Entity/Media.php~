@@ -100,4 +100,3 @@ class Media
         return $this->mediaName;
     }
 }
-
