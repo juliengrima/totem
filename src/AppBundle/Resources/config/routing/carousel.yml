@@ -4,8 +4,8 @@ carousel_index:
     methods:  GET
 
 carousel_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:Carousel:show" }
+    path:     /
+    defaults: { _controller: "AppBundle:Carousel:RederingCarousel" }
     methods:  GET
 
 carousel_new:

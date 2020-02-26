@@ -2,22 +2,8 @@
 
 {% block header %}
      <div class="context">
-{#Carousel Slider#}
-{#        <div class="carousel carousel-slider">#}
-{#            <a class="carousel-item" href="#one!"><img src="https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg"></a>#}
-{#            <a class="carousel-item" href="#two!"><img src="https://www.numerama.com/content/uploads/2019/05/radiotelescope-espace-astronomie-ciel-1024x640.jpg"></a>#}
-{#            <a class="carousel-item" href="#three!"><img src="https://phototheque.pasteur.fr/images/slideshow/image-1.jpg"></a>#}
-{#            <a class="carousel-item" href="#four!"><img src="http://img.over-blog-kiwi.com/0/93/22/56/20150118/ob_606c9f_pedagogie-par-l-image.jpg"></a>#}
-{#        </div>#}
 
-
-      <div class="carousel carousel-slider center">
-            <div class="carousel-item red white-text" href="#one!">
-              <h2>First Panel</h2>
-              <p class="white-text">This is your first panel</p>
-            </div>
-      </div>
-
+{{ render(controller('AppBundle:Carousel:RederingCarousel')) }}
 
         <div class="row">
             <h1>Espace <span class="h1-span">Gambetta</span></h1>

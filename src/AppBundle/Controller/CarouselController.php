@@ -27,6 +27,16 @@ class CarouselController extends Controller
         ));
     }
 
+    public function RederingCarouselAction(){
+        $em = $this->getDoctrine()->getManager();
+
+        $carousels = $em->getRepository('AppBundle:Carousel')->findAll();
+
+        return $this->render('carousel/rendering.html.twig', array(
+            'carousels' => $carousels,
+        ));
+    }
+
     /**
      * Creates a new carousel entity.
      *
@@ -38,30 +48,34 @@ class CarouselController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /* KEEP PICTURE */
+            $imageForm = $form->get ('media');
+            $image = $imageForm->getData ();
+            if (isset($image)){
+
+                $image->setMediaName ($image);
+
+                if (isset($image)) {
+
+                    /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                    $image->setMediaName (preg_replace ('/\W/', '_', "picture_" . uniqid ()));
+
+                    // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                    $this->get ('media.interface')->mediaUpload ($image);
+                }
+            }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($carousel);
             $em->flush();
 
-            return $this->redirectToRoute('carousel_show', array('id' => $carousel->getId()));
+            return $this->redirectToRoute('carousel_index', array('id' => $carousel->getId()));
         }
 
         return $this->render('carousel/new.html.twig', array(
             'carousel' => $carousel,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a carousel entity.
-     *
-     */
-    public function showAction(Carousel $carousel)
-    {
-        $deleteForm = $this->createDeleteForm($carousel);
-
-        return $this->render('carousel/show.html.twig', array(
-            'carousel' => $carousel,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -76,6 +90,24 @@ class CarouselController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            /* KEEP PICTURE */
+            $imageForm = $form->get ('media');
+            $image = $imageForm->getData ();
+            if (isset($image)){
+
+                $image->setMediaName ($image);
+
+                if (isset($image)) {
+
+                    /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                    $image->setMediaName (preg_replace ('/\W/', '_', "picture_" . uniqid ()));
+
+                    // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                    $this->get ('media.interface')->mediaUpload ($image);
+                }
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('carousel_edit', array('id' => $carousel->getId()));

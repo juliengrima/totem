@@ -1,0 +1,12 @@
+<div class="carousel carousel-slider center">
+    {% for carousel in carousels %}
+    <div class="carousel-item red white-text" href="#one!">
+        <img src="{{ asset(carousel.media.link) }}" alt="{{ carousel.media.mediaName }}" class="img-carousel">
+        <div class="text-carousel">
+            <h2>{{ carousel.text }}</h2>
+            <p class="indigo lighten-4">{{ carousel.text }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+

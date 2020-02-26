@@ -24,6 +24,13 @@ img{
         width: 20% !important;
         height: 20% !important;
     }
+    .img-carousel{
+        z-index: -10!important;
+    }
+    .text-carousel{
+        z-index: 50;
+        display: flex;
+    }
 
 .context {
     z-index: 5;

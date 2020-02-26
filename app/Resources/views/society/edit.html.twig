@@ -1,21 +1,31 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Society edit</h1>
+    <h1>Modification d'une société</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <div class="container center">
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form.societyName, {'attr': {'class': 'input-text-color'}} ) }}
+        {{ form_widget(edit_form.levels, {'attr': {'type' : 'list', 'class': 'input-text-color'}} ) }}
+        {{ form_widget(edit_form.side, {'attr': {'class': 'input-text-color'}} ) }}
+        {{ form_widget(edit_form.media, { 'attr': {'class': 'media-input'}} ) }}
+        <input type="submit" value="Enregistrer" class="submit" />
+        {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('society_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="center">
+            <li>
+                <a href="{{ path('level_index') }}"><h5>retour à la liste</h5></a>
+            </li>
+        </ul>
+    </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    </script>
 {% endblock %}
