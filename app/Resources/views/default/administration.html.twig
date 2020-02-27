@@ -1,0 +1,66 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    <div class="row center admin">
+        <div class="col l12">
+            <div>
+                <a href="{{ path('homepage') }}" class="waves-effect waves-light btn-large admin-button">
+                    <h3 class="text-admin-button">Accueil</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+        <div class="row center">
+            <div class="col l6">
+                <div>
+                    <a href="{{ path('level_index') }}" class="waves-effect waves-light btn-large admin-button">
+                        <h3 class="text-admin-button">Etages</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col l6">
+                <div>
+                    <a href="{{ path('side_index') }}" class="waves-effect waves-light btn-large admin-button">
+                        <h3 class="text-admin-button">Directions</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col l6">
+                <div>
+                    <a href="{{ path('society_index') }}" class="waves-effect waves-light btn-large admin-button">
+                        <h3 class="text-admin-button">Socétés</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col l6">
+                <div>
+                    <a href="{{ path('carousel_index') }}" class="waves-effect waves-light btn-large admin-button">
+                        <h3 class="text-admin-button">Présentations</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+{#        <div class="row center">#}
+{#            <div class="col l12">#}
+{#                <div>#}
+{#                    <a href="{{ path('homepage') }}" class="waves-effect waves-light btn-large admin-button">#}
+{#                        <h3 class="text-admin-button">Accueil</h3>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

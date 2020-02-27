@@ -27,4 +27,8 @@ class DefaultController extends Controller
             'societyDirection' => $societyDirection
         ));
     }
+
+    public function AdminAction(){
+        return $this->render('default/administration.html.twig');
+    }
 }

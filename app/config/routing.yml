@@ -1,6 +1,15 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+    
+#-------------------------------------------------------
+#------------------------- ADMINISTRATION
+#-------------------------------------------------------
+
+app_admin:
+    path:     /administration
+    defaults: { _controller: "AppBundle:Default:Admin" }
+    methods:  GET
 
 #-------------------------------------------------------
 #------------------------- CRUD

@@ -293,3 +293,17 @@ td{
     color: #eaeded;
     margin-bottom: 5%;
 }
+
+/* ----------ADMINISTRATION ------------ */
+.admin{
+    margin-top: 10%;
+}
+
+.admin-button{
+    width: 370px;
+    height: 250px;
+}
+
+.text-admin-button{
+    margin-top: 32%;
+}
