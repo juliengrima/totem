@@ -15,6 +15,9 @@ AppBundle\Entity\Carousel:
         text:
             type: text
             nullable: true
+        type:
+            type: boolean
+            nullable: true
 
     oneToOne:
         media:

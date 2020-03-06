@@ -109,4 +109,33 @@ class Carousel
     {
         return $this->media;
     }
+    /**
+     * @var boolean
+     */
+    private $type;
+
+
+    /**
+     * Set type
+     *
+     * @param boolean $type
+     *
+     * @return Carousel
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return boolean
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 }

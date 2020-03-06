@@ -14,14 +14,32 @@
                 {{ form_widget(form.text, {'attr': {'class': 'input-text-color textarea1'}} ) }}
             </div>
             <div>
-                <h4>Image</h4>
-                {{ form_widget(form.media, { 'attr': {'class': 'media-input'}} ) }}
+               <table class="table-text-color">
+                   <thead>
+                       <tr>
+                           <th>Média</th>
+                           <th>Type du média</span></th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>
+                               {{ form_widget(form.media, { 'attr': {'class': 'media-input'}} ) }}
+                           </td>
+                           <td>
+                               {{ form_label(form.type) }}
+                               {{ form_widget(form.type, { 'attr': {'class': 'media-check'}} ) }}
+                           </td>
+                       </tr>
+                   </tbody>
+               </table>
             </div>
 
-            <input type="submit" value="Enregistrer" class="submit" />
-            {{ form_end(form) }}
-
-            <ul class="center">
+            <ul class="center spacing-div">
+                <li>
+                    <input type="submit" value="Enregistrer" class="submit" />
+                    {{ form_end(form) }}
+                </li>
                 <li>
                     <a href="{{ path('carousel_index') }}"><h5>retour à la liste</h5></a>
                 </li>
