@@ -6,17 +6,16 @@
                 {% if carousel.type != 1 %}
             <img src="{{ asset(carousel.media.link) }}" alt="{{ carousel.media.mediaName }}" class="img-carousel">
                 {% else %}
-                    <video class="responsive-video logo" controls>
-                        <source src="{{ asset( society.media.link) }}" type="video/mp4">
-                        <source src="{{ asset( society.media.link) }}" type="video/ogg">
-                        <source src="{{ asset( society.media.link) }}" type="video/webm">
-                        <p>Votre navigateur ne prend pas en charge les vidéos HTML5.
-                            Voici <a href="{{ path( society.media.link) }}">un lien pour télécharger la vidéo</a>.</p>
+                    <video class="responsive-video" playsinline muted autoplay>
+                        <source src="{{ asset( carousel.media.link) }}" type="video/mp4">
+                        <source src="{{ asset( carousel.media.link) }}" type="video/ogg">
+                        <source src="{{ asset( carousel.media.link) }}" type="video/webm">
+                        <p>Votre navigateur ne prend pas en charge les vidéos HTML5.</p>
                     </video>
                 {% endif %}
             {% endif %}
             <div class="caption center-align">
-                <h3 class="grey-text">{{ carousel.text }}</h3>
+                <h3 class="grey-text carousel-shadow">{{ carousel.title }}</h3>
                 <h5 class="grey-text">{{ carousel.text }}</h5>
             </div>
         </li>

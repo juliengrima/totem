@@ -108,6 +108,11 @@ video{
     border-color: #FFFFFF;
 }
 
+.carousel-shadow{
+    color: black;
+    text-shadow: 1px 1px 2px darkslategrey, 0 0 1em  #85c1e9 , 0 0 0.2em  #e5e7e9 ;
+}
+
 /*------------------------ ANIMATION -----------------------------*/
 
 /*AREA BACKGROUND ANIMATION*/
