@@ -6,7 +6,7 @@
                 {% if carousel.type != 1 %}
             <img src="{{ asset(carousel.media.link) }}" alt="{{ carousel.media.mediaName }}" class="img-carousel">
                 {% else %}
-                    <video class="responsive-video" playsinline muted autoplay>
+                    <video class="responsive-video" playsinline muted autoplay loop>
                         <source src="{{ asset( carousel.media.link) }}" type="video/mp4">
                         <source src="{{ asset( carousel.media.link) }}" type="video/ogg">
                         <source src="{{ asset( carousel.media.link) }}" type="video/webm">
